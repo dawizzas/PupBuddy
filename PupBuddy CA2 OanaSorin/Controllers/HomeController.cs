@@ -15,7 +15,7 @@ namespace PupBuddy_CA2_OanaSorin.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Here's me testing stuff.";
 
             return View();
         }
