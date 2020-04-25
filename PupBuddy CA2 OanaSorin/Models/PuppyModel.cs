@@ -6,7 +6,7 @@ using System.Web;
 
 namespace PupBuddy_CA2_OanaSorin.Models
 {
-    public class Puppy
+    public class PuppyModel
     {
         public int Id{ get; set; }
 

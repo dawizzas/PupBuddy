@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PupBuddy_CA2_OanaSorin.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,21 +9,15 @@ namespace PupBuddy_CA2_OanaSorin.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
-        {
-            return View();
-        }
+        
 
-        public ActionResult About()
+        public ActionResult ListPuppies()
         {
-            ViewBag.Message = "Here's me testing stuff.";
+            List<PuppyModel> puppies = new List<PuppyModel>();
 
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
+            puppies.Add(new PuppyModel { Id = 1, Breed = "GoldenRetriever", PupName = "Nibble", OwnerPhoneNumber = "092839"});
+            puppies.Add(new PuppyModel { Id = 2, Breed = "GoldenRetriever", PupName = "Nibble", OwnerPhoneNumber = "098765" });
+            puppies.Add(new PuppyModel { Id = 3, Breed = "GoldenRetriever", PupName = "Nibble", OwnerPhoneNumber = "098765" });
 
             return View();
         }

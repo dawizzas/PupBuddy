@@ -1,0 +1,51 @@
+﻿@model IEnumerable<PupBuddy_CA2_OanaSorin.Models.PuppyModel>
+
+@{
+    ViewBag.Title = "ListPuppies";
+}
+
+<h2>ListPuppies</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Breed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PupName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PupSize)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PupAge)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Breed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PupName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PupSize)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PupAge)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
