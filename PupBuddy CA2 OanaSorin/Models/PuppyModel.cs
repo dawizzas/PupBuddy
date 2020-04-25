@@ -11,7 +11,6 @@ namespace PupBuddy_CA2_OanaSorin.Models
         public int Id{ get; set; }
 
         //pk
-        [Key]
         public string OwnerPhoneNumber { get; set; }
         [Required(ErrorMessage ="Please provide the breed")]
         public string Breed { get; set; }

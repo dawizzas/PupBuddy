@@ -12,6 +12,12 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OwnerPhoneNumber)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Breed)
         </th>
         <th>
@@ -27,25 +33,31 @@
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Breed)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PupName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PupSize)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PupAge)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Id)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.OwnerPhoneNumber)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Breed)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PupName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PupSize)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PupAge)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+    </td>
+</tr>
 }
 
 </table>

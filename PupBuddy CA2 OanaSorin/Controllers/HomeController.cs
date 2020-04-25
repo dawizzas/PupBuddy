@@ -15,11 +15,11 @@ namespace PupBuddy_CA2_OanaSorin.Controllers
         {
             List<PuppyModel> puppies = new List<PuppyModel>();
 
-            puppies.Add(new PuppyModel { Id = 1, Breed = "GoldenRetriever", PupName = "Nibble", OwnerPhoneNumber = "092839"});
-            puppies.Add(new PuppyModel { Id = 2, Breed = "GoldenRetriever", PupName = "Nibble", OwnerPhoneNumber = "098765" });
-            puppies.Add(new PuppyModel { Id = 3, Breed = "GoldenRetriever", PupName = "Nibble", OwnerPhoneNumber = "098765" });
+            puppies.Add(new PuppyModel { Id=1, OwnerPhoneNumber = "092839", Breed = "GoldenRetriever", PupName = "Nibble",  PupSize = "tiny", PupAge = 1, });
+            puppies.Add(new PuppyModel { Id=2, OwnerPhoneNumber = "092839", Breed = "GoldenRetriever", PupName = "Nibble", PupSize = "tiny", PupAge = 1, });
+            puppies.Add(new PuppyModel { Id =3, OwnerPhoneNumber = "092839", Breed = "GoldenRetriever", PupName = "Nibble", PupSize = "tiny", PupAge = 1, });
 
-            return View();
+            return View(puppies);
         }
     }
 }
