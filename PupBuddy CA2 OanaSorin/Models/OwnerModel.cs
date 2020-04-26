@@ -8,11 +8,9 @@ namespace PupBuddy_CA2_OanaSorin.Models
 {
     public class OwnerModel
     {
-        [Required]
-        public int Id { get; set; }
+        [Required]        //pk 
+        public int OwnerID { get; set; }
         public string OwnerName { get; set; }
-        //pk 
-        [Key]
         public string OwnerPhoneNumber { get; set; }
     }
 }

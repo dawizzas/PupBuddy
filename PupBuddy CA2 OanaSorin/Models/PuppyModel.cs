@@ -8,15 +8,14 @@ namespace PupBuddy_CA2_OanaSorin.Models
 {
     public class PuppyModel
     {
-        public int Id{ get; set; }
+        public int PuppyID{ get; set; }
 
         //pk
-        public string OwnerPhoneNumber { get; set; }
+        public string OwnerID { get; set; }
         [Required(ErrorMessage ="Please provide the breed")]
         public string Breed { get; set; }
         public string PupName { get; set; }
         public string PupSize{ get; set; }
-        public decimal PupAge{ get; set; }
 
 
     }

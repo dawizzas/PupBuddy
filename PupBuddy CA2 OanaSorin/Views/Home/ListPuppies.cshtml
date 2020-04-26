@@ -12,11 +12,9 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Id)
+            @Html.DisplayNameFor(model => model.OwnerID)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.OwnerPhoneNumber)
-        </th>
+
         <th>
             @Html.DisplayNameFor(model => model.Breed)
         </th>
@@ -26,20 +24,16 @@
         <th>
             @Html.DisplayNameFor(model => model.PupSize)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PupAge)
-        </th>
+
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
 <tr>
     <td>
-        @Html.DisplayFor(modelItem => item.Id)
+        @Html.DisplayFor(modelItem => item.PuppyID)
     </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.OwnerPhoneNumber)
-    </td>
+
     <td>
         @Html.DisplayFor(modelItem => item.Breed)
     </td>
@@ -49,13 +43,11 @@
     <td>
         @Html.DisplayFor(modelItem => item.PupSize)
     </td>
+
     <td>
-        @Html.DisplayFor(modelItem => item.PupAge)
-    </td>
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+        @Html.ActionLink("Edit", "Edit", new { id = item.OwnerID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.OwnerID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.OwnerID })
     </td>
 </tr>
 }
