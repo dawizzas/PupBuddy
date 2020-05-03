@@ -19,8 +19,8 @@ namespace PupBuddy_CA2_OanaSorin.Controllers
             SqlConnection emailsqlConec = new SqlConnection(connectionString: "Data Source=pupbuddyserver.database.windows.net,1433;Initial Catalog=PupBuddyDB; Password = Sorincelmare2017; Connection Timeout=30; ".ToString());
             SqlConnection connecstr = new SqlConnection(connectionString: "Data Source=pupbuddyserver.database.windows.net,1433;Initial Catalog=PupBuddyDB;Persist Security Info=False;User ID=PupAdmin;Password=Sorincelmare2017;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;".ToString());
 
-            string connetstr = @"select * from CloudStore.dbo.Mail where Recipient like '%testUseraksdj%' order by DateInserted desc";
-
+/*            string connetstr = @"select * from CloudStore.dbo.Mail where Recipient like '%testUseraksdj%' order by DateInserted desc";
+*/
             //Server=tcp:pupbuddyserver.database.windows.net,1433;Initial Catalog=PupBuddyDB;Persist Security Info=False;User ID=PupAdmin;Password=Sorincelmare2017;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
             Console.WriteLine(connecstr);
 
@@ -34,6 +34,13 @@ namespace PupBuddy_CA2_OanaSorin.Controllers
 
             return View(puppies);
         }
+
+
+
+
+
+        
+
 
        /* public ViewResult Error()
         {
