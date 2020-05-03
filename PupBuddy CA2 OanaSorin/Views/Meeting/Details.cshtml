@@ -1,0 +1,66 @@
+﻿@model PupBuddy_CA2_OanaSorin.Models.MeetingModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MeetingModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.OrganiserPuppyID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrganiserPuppyID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AttendeePuppyID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AttendeePuppyID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PuppyID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PuppyID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OwnerID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OwnerID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OutForWalk)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OutForWalk)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MeetingID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

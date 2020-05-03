@@ -1,0 +1,58 @@
+﻿@model PupBuddy_CA2_OanaSorin.Models.PuppyModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PuppyModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.OwnerID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OwnerID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Breed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Breed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PupName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PupName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PupSize)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PupSize)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PupDateOfBirth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PupDateOfBirth)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PuppyID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
