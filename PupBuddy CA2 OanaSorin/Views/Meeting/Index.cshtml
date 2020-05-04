@@ -7,22 +7,11 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Schedule a new meeting for your puppy", "Create")
 </p>
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.OrganiserPuppyID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AttendeePuppyID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PuppyID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.OwnerID)
-        </th>
+        
         <th>
             @Html.DisplayNameFor(model => model.OutForWalk)
         </th>
@@ -34,18 +23,7 @@
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.OrganiserPuppyID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AttendeePuppyID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PuppyID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OwnerID)
-        </td>
+        
         <td>
             @Html.DisplayFor(modelItem => item.OutForWalk)
         </td>

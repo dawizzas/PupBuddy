@@ -49,6 +49,7 @@ namespace PupBuddy_CA2_OanaSorin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "MeetingID,OrganiserPuppyID,AttendeePuppyID,PuppyID,OwnerID,OutForWalk,Location")] MeetingModel meetingModel)
         {
+
             if (ModelState.IsValid)
             {
                 db.Meetings.Add(meetingModel);
