@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Data.SqlClient;
+using System.Dynamic;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -26,6 +27,8 @@ namespace PupBuddy_CA2_OanaSorin.Controllers
         // GET: Meeting
         public ActionResult Index()
         {
+
+           
             return View(db.Meetings.ToList());
         }
 
@@ -36,7 +39,7 @@ namespace PupBuddy_CA2_OanaSorin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            MeetingModel meetingModel = db.Meetings.Find(id);
+            MeetingModel meetingModel = db.Meetings.Find(long.Parse(id));
             if (meetingModel == null)
             {
                 return HttpNotFound();
@@ -46,7 +49,7 @@ namespace PupBuddy_CA2_OanaSorin.Controllers
 
         // GET: Meeting/Create
         [HttpGet]
-        public ActionResult Create(/*int id*/)
+        public ActionResult Create()
         {
             /*SqlConnection sqlCon = new SqlConnection(db.ToString());*//*
             private PuppyContext dbc = new PuppyContext();
@@ -75,6 +78,8 @@ namespace PupBuddy_CA2_OanaSorin.Controllers
 
 
 
+
+
             MeetingModel stockModel = new MeetingModel();
             using (PuppyContext db = new PuppyContext())
                 stockModel.PuppyCollection = db.Puppy.ToList<PuppyModel>();
@@ -97,6 +102,7 @@ namespace PupBuddy_CA2_OanaSorin.Controllers
            
             if (ModelState.IsValid)
             {
+                string SelectedValue = meetingModel.AttendeePuppyID;
 
                 db.Meetings.Add(meetingModel);
                 db.SaveChanges();
@@ -113,7 +119,7 @@ namespace PupBuddy_CA2_OanaSorin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            MeetingModel meetingModel = db.Meetings.Find(id);
+            MeetingModel meetingModel = db.Meetings.Find(long.Parse(id));
             if (meetingModel == null)
             {
                 return HttpNotFound();
@@ -144,7 +150,7 @@ namespace PupBuddy_CA2_OanaSorin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            MeetingModel meetingModel = db.Meetings.Find(id);
+            MeetingModel meetingModel = db.Meetings.Find(long.Parse(id));
             if (meetingModel == null)
             {
                 return HttpNotFound();
@@ -157,7 +163,7 @@ namespace PupBuddy_CA2_OanaSorin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
-            MeetingModel meetingModel = db.Meetings.Find(id);
+            MeetingModel meetingModel = db.Meetings.Find(long.Parse(id));
             db.Meetings.Remove(meetingModel);
             db.SaveChanges();
             return RedirectToAction("Index");

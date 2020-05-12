@@ -10,10 +10,10 @@ namespace PupBuddy_CA2_OanaSorin.Models
     public class MeetingModel
     {
         [Key]
-        public string MeetingID { get; set; }
+        public int MeetingID { get; set; }
         public string OrganiserPuppyID { get; set; }
         public string AttendeePuppyID { get; set; }
-        public string PuppyID { get; set; }
+        public int PuppyID { get; set; }
         public string OwnerID { get; set; }
 
         [DataType(DataType.DateTime)]

@@ -1,17 +1,23 @@
 ﻿@model IEnumerable<PupBuddy_CA2_OanaSorin.Models.MeetingModel>
 
+
+
 @{
     ViewBag.Title = "Index";
     List<SelectListItem> puppies = new List<SelectListItem>();
     puppies.Add(new SelectListItem() { Text = "Puppy 1", Value = "Mark" });
     puppies.Add(new SelectListItem() { Text = "Puppy 2", Value = "Joe" });
 
-
+    @*var selectQueryString = "select PupName from PuppyModel";*@
 
 
 }
 
+
+
+
 <h2>Index</h2>
+@*<h3>Puppy: @ViewBag.PupName</h3>*@
 
 <p>
     @Html.ActionLink("Schedule a new meeting for your puppy", "Create")
@@ -22,7 +28,7 @@
         <th>
             Puppy
         </th>
-            
+
         <th>
             @Html.DisplayNameFor(model => model.OutForWalk)
         </th>
@@ -32,26 +38,30 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        
-        <td>
-            Pupper
-           @* @Html.DisplayFor(model => model.PuppyID, new { id = item.PuppyID })*@
-        </td>
+    @foreach (var item in Model)
+    {
+        <tr>
 
-        <td>
-            @Html.DisplayFor(modelItem => item.OutForWalk)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Location)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MeetingID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MeetingID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MeetingID })
-        </td>
-    </tr>
-}
+            <td>
+
+                @Html.DisplayFor(modelItem => item.PuppyID)
+               @* @Html.ActionLink("Puppy", "Index", new { code = item.PuppyID, id = ViewBag.PupName })*@
+
+
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.OutForWalk)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.MeetingID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.MeetingID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.MeetingID })
+            </td>
+        </tr>
+    }
 
 </table>
