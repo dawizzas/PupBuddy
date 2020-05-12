@@ -46,7 +46,7 @@ namespace PupBuddy_CA2_OanaSorin.Controllers
 
         // GET: Meeting/Create
         [HttpGet]
-        public ActionResult Create(int id)
+        public ActionResult Create(/*int id*/)
         {
             /*SqlConnection sqlCon = new SqlConnection(db.ToString());*//*
             private PuppyContext dbc = new PuppyContext();
@@ -74,12 +74,12 @@ namespace PupBuddy_CA2_OanaSorin.Controllers
             }*/
 
 
-            
-                MeetingModel stockModel = new MeetingModel();
-                using (PuppyContext db = new PuppyContext())
-                    stockModel.PuppyCollection = db.Puppy.ToList<PuppyModel>();
-                return View(stockModel);
-            
+
+            MeetingModel stockModel = new MeetingModel();
+            using (PuppyContext db = new PuppyContext())
+                stockModel.PuppyCollection = db.Puppy.ToList<PuppyModel>();
+            return View(stockModel);
+
 
 
 
