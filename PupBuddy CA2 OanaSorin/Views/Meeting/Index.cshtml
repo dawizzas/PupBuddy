@@ -2,6 +2,13 @@
 
 @{
     ViewBag.Title = "Index";
+    List<SelectListItem> puppies = new List<SelectListItem>();
+    puppies.Add(new SelectListItem() { Text = "Puppy 1", Value = "Mark" });
+    puppies.Add(new SelectListItem() { Text = "Puppy 2", Value = "Joe" });
+
+
+
+
 }
 
 <h2>Index</h2>
@@ -11,7 +18,11 @@
 </p>
 <table class="table">
     <tr>
-        
+
+        <th>
+            Puppy
+        </th>
+            
         <th>
             @Html.DisplayNameFor(model => model.OutForWalk)
         </th>
@@ -24,6 +35,10 @@
 @foreach (var item in Model) {
     <tr>
         
+        <td>
+           @* @Html.DisplayFor(model => model.PuppyID, new { id = item.PuppyID })*@
+        </td>
+
         <td>
             @Html.DisplayFor(modelItem => item.OutForWalk)
         </td>

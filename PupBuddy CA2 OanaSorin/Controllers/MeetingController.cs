@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -14,6 +15,13 @@ namespace PupBuddy_CA2_OanaSorin.Controllers
     public class MeetingController : Controller
     {
         private PuppyContext db = new PuppyContext();
+
+       /* public ActionResult GetPuppies()
+        {
+            string puppies = @"select PupName from PupBuddyDB.dbo.PuppyModel";
+            Console.WriteLine(puppies);
+            return View(db.Meetings.ToList());
+        }*/
 
         // GET: Meeting
         public ActionResult Index()
@@ -37,9 +45,45 @@ namespace PupBuddy_CA2_OanaSorin.Controllers
         }
 
         // GET: Meeting/Create
-        public ActionResult Create()
+        [HttpGet]
+        public ActionResult Create(int id)
         {
-            return View();
+            /*SqlConnection sqlCon = new SqlConnection(db.ToString());*//*
+            private PuppyContext dbc = new PuppyContext();
+
+        string puppies = @"select PupName from PupBuddyDB.dbo.PuppyModel";
+            Console.WriteLine(puppies);
+
+            SqlDataAdapter adaptor = new SqlDataAdapter(puppies, dbc);
+
+            if (ModelState.IsValid)
+            {
+                string pup = @"select PupName from PupBuddyDB.dbo.PuppyModel";
+                Console.WriteLine(pup, puppies);
+                DataSet dataset = new DataSet();
+                adaptor.Fill(dataset);
+
+                Console.WriteLine(puppies, adaptor);
+                if (dataset.Tables.Count > 0)
+                {
+                    foreach (DataRow row in dataset.Tables[0].Rows)
+                    { Console.WriteLine(puppies); }
+                }
+
+                
+            }*/
+
+
+            
+                MeetingModel stockModel = new MeetingModel();
+                using (PuppyContext db = new PuppyContext())
+                    stockModel.PuppyCollection = db.Puppy.ToList<PuppyModel>();
+                return View(stockModel);
+            
+
+
+
+            /*return View();*/
         }
 
         // POST: Meeting/Create
@@ -50,8 +94,10 @@ namespace PupBuddy_CA2_OanaSorin.Controllers
         public ActionResult Create([Bind(Include = "MeetingID,OrganiserPuppyID,AttendeePuppyID,PuppyID,OwnerID,OutForWalk,Location")] MeetingModel meetingModel)
         {
 
+           
             if (ModelState.IsValid)
             {
+
                 db.Meetings.Add(meetingModel);
                 db.SaveChanges();
                 return RedirectToAction("Index");
